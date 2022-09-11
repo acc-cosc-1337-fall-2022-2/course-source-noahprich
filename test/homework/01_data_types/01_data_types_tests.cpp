@@ -10,12 +10,11 @@ TEST_CASE("Verify sum_numbers function")
 	REQUIRE(add_numbers(5, 5) == 10);
 	REQUIRE(add_numbers(10, 10) == 20);
 }
-
+// My test case for the function
 TEST_CASE("Verify multiply_numbers function")
 {
-	REQUIRE(multiply_numbers(3,3) == 9);
-	REQUIRE(multiply_numbers(5,5) == 25);
-	REQUIRE(multiply_numbers(3,4) == 12);
+	REQUIRE(multiply_numbers(10) == 50);
+	REQUIRE(multiply_numbers(2) == 10);
 	
 }
 

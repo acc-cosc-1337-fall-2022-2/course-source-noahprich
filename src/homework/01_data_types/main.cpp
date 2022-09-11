@@ -6,18 +6,24 @@
 //write namespace using statement for cout
 
 using std::cout;
+using std::cin;
 /*
 Call multiply_numbers with 10 and 10 parameter values and display function result
 */
 int main()
 {
-	int num1, num2;
-    cout << "Enter 1st number: ";
-	cin >> num1;
-	cout << "Enter 2nd number: ";
-	cin >> num2;
+	int num;
+	cin >> num;
 
-	int result = num1 * num2;
+	int result;
+	result = multiply_numbers(num);
 
-	cout << "The result is: " << result;
+	cout << "First result is: " << result << "\n";
+
+	int num1 =4;
+	result = multiply_numbers(num1);
+	
+	cout << "Second result is: " << result << "\n";
+
+	return 0;
 }
