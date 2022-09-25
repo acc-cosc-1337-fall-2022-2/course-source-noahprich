@@ -1,42 +1,46 @@
 //write include statement for decisions header
-#include <iostream>
 #include <string>
 #include "decisions.h"
 
-using std::cout;
-using std::cin;
 using std::string;
 
 //Write code for function(s) code here
-std::string get_letter_grade_using_if (int grade)
-{
+string get_letter_grade_using_if(int grade){
+    string letter_grade;     
+
     if (grade >= 90){
-        cout<<"Your grade: A "<<grade<<"/n";
+        letter_grade = "A";
+    } else if (grade >=80){
+        letter_grade = "B";
+    } else if (grade >=70){
+        letter_grade = "C";
+    } else if (grade >=60){
+        letter_grade = "D";
+    } else {
+        letter_grade = "F";
     }
-    else if (grade >=80){
-        cout<<"Your grade: B "<<grade<<"/n";
-    }
-    else if (grade >=70){
-        cout<<"Your grade: B "<<grade<<"/n";
-    }
-    else if (grade >=60){
-        cout<<"Your grade: B "<<grade<<"/n";
-    }
-    else if (grade <= 59){
-        cout<<"Your grade: F "<<grade<<"/n";
-    }
-    else {
-        cout<<"That is not a valid grade input. Try again..."<<"/n";
-    }
-    return 0;
+    return letter_grade;
 }
 
-std::string get_letter_grade_using_switch (int grade)
+string get_letter_grade_using_switch(int grade)
 {
-    switch (grade) 
-    {
-        case 
-    }
+    string letter_grade;
+    switch(grade){
 
-    return 0;
+    case 90 ... 100:
+        letter_grade = "A";
+        break;
+    case 80 ... 89:
+        letter_grade = "B";
+        break;
+    case 70 ... 79:
+        letter_grade = "C";
+        break;
+    case 60 ... 69:
+        letter_grade = "D";
+        break;
+    case 0 ... 59:
+        letter_grade = "F";
+        break; }
+    return letter_grade;
 }
