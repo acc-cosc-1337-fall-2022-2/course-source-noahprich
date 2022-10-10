@@ -15,6 +15,8 @@ double parameter
 @return the num parameter
 */
 
+int
+
 /*
 Function static_cast_double_int with a double parameter that does
 a static_cast conversion to int
@@ -22,3 +24,9 @@ a static_cast conversion to int
 @param double num
 @return the static cast conversion to int
 */
+
+int static_cast_double_int(double num)
+{
+    auto num1 = static_cast<int>(num);
+    return num1;
+}
