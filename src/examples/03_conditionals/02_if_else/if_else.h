@@ -3,3 +3,4 @@
 
 
 
+bool is_even(int num);

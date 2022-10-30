@@ -2,4 +2,4 @@
 // and returns a bool type
 
 
-bool is_overtime(double hours)
+bool is_overtime(double hours);
