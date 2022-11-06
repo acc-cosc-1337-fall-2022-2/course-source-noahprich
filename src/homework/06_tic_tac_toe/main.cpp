@@ -2,9 +2,8 @@
 int main() 
 {
     TicTacToe game;
-    string first_player;
+    string first_player, play_again, winner;
     int position;
-    string play_again;
     do {
         cout << "Do you wish to play 'X' or 'O'?\n";
         cin >> first_player;
@@ -14,11 +13,14 @@ int main()
             cin >> position;
             game.mark_board(position - 1);
         }
-        cout << "\nGame over!\nPlay again? (Y/N)\n";
+        winner = game.get_winner();
+        cout << "Game over!";
+        if (winner == "C") cout << " It's... a tie? Boring!";
+        else cout << " And the winner is " << winner << "!\n";
+        cout << "\n\nPlay again? (Y/N)\n";
         cin >> play_again;
     }
-    while (play_again == "Y");
-    cout << "Thanks for playing! We will soon add functionality"
-            " for win condition checks.";
+    while (toupper(play_again[0]) == 'Y');
+    cout << "Thanks for playing!";
 	return 0;
 }
