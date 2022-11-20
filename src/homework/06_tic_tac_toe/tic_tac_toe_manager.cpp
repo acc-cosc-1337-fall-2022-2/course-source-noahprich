@@ -4,16 +4,17 @@
 #include "tic_tac_toe_manager.h"
 #include<string>
 
-void TicTacToeManager::save_game(TicTacToe b)
+void TicTacToeManager::save_game(std::unique_ptr<TicTacToe> &b)
 {
-    games.push_back(b);
-    update_winner_count(b.get_winner());
+    update_winner_count(b->get_winner());
+    games.push_back(std::move(b));
+    
 }
 std::ostream& operator<<(std::ostream& out, const TicTacToeManager& manager)
 {
     for (int i = 0; i <manager.games.size();i++)
         {
-            out<<"\n"<<manager.games[i]<<"\n";
+            out<<"\n"<<*(manager.games[i])<<"\n";
         } 
     
     return out;

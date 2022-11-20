@@ -9,6 +9,8 @@ class TicTacToe
 {   
    
  public:
+   TicTacToe(){}
+   TicTacToe(int size):pegs(size*size," "){}
    friend std::ostream& operator<<(std::ostream& out, const TicTacToe& game);
    friend std::istream& operator>>(std::istream& in, TicTacToe& game);
    bool game_over();
@@ -16,18 +18,19 @@ class TicTacToe
    void mark_board(int position);
    string get_player()const;
    string get_winner();
- 
-
+   void set_winner();//don't know why, uml said this should be public
+ protected:
+   vector<string> pegs;
+   virtual bool check_column_win();
+   virtual bool check_row_win();
+   virtual bool check_diagonal_win();
+   
  private:   
    void set_next_player();
    bool check_board_full();
    void clear_board();
-   std::string player;
-   vector<string> pegs{9," "};
-   bool check_column_win();
-   bool check_row_win();
-   bool check_diagonal_win();
-   void set_winner();
+   std::string player; 
+  
    string winner;
 };
 #endif
