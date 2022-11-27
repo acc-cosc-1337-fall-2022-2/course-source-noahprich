@@ -85,7 +85,7 @@ void TicTacToe::set_winner()
   else 
   winner ="X";
 }
-std::ostream& operator<<(std::ostream& out, const TicTacToe& game)
+std::ostream& operator<<(std::ostream& out, const TicTacToe &game)
 {
   //...display board overload..................................................
   if (game.pegs.size()==9)

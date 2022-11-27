@@ -9,7 +9,8 @@ using std::make_unique;
 using std::cin;
 int main() 
 {
-	TicTacToeManager manager;//instantiate manager outside loops...
+	TicTacToeData data;
+	TicTacToeManager manager(data);
 	LOOP: string player_choice;
 	std::cout<<"do you want to play tictactoe 3 or 4? press 3 for tictactoe 3 and 4 for tictactoe 4: ";
 	int player_choice0;
@@ -38,7 +39,6 @@ int main()
 		}
 
 	game->start_game(player_choice);
-	//auto var= pegs[1];
 	do //inner loop for marking board
 	{	
 		// take position and display board with overloaded operator.
